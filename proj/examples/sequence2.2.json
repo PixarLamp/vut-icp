@@ -1,0 +1,56 @@
+{
+  "classes": ["Customer", "Order", "Product", "Page", "OrderDetails"],
+  "sequences": [
+    {
+      "activate": "Customer",
+      "from": "Customer",
+      "where": "Page",
+      "type": "asyn_request",
+      "name": "Login()"
+    },
+    {
+      "activate": "Page",
+      "from": "Customer",
+      "where": "Product",
+      "type": "syn_request",
+      "name": "AddToCart()",
+      "deactivate": "Page"
+    },
+    {
+      "activate": "Product",
+      "from": "Product",
+      "where": "Customer",
+      "type": "response",
+      "name": "Added()",
+      "deactivate": "Product"
+    },
+    {
+      "from": "Customer",
+      "where": "Order",
+      "type": "syn_request",
+      "name": "Purchase()"
+    },
+    {
+      "activate": "Order",
+      "from": "Order",
+      "where": "OrderDetails",
+      "type": "syn_request",
+      "name": "PlaceOrder()"
+    },
+    {
+      "activate": "OrderDetails",
+      "from": "OrderDetails",
+      "where": "Order",
+      "type": "response",
+      "name": "CalculateTotal()",
+      "deactivate": "OrderDetails"
+    },
+    {
+      "from": "Order",
+      "where": "Customer",
+      "type": "asyn_request",
+      "name": "Ordered()",
+      "deactivate": "Order"
+    }
+  ]
+}

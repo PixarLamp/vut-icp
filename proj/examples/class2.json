@@ -1,0 +1,84 @@
+{
+  "classes": [
+    {
+      "name": "User",
+      "attributes": ["-userid", "-password", "#registerDate"],
+      "methods": ["Login()"]
+    },
+    {
+      "name": "Customer",
+      "attributes": [
+        "-name",
+        "-address",
+        "-email",
+        "#customerId",
+        "-accountBalance"
+      ],
+      "methods": ["Register()", "Purchase()"]
+    },
+    {
+      "name": "Administrator",
+      "attributes": ["-name", "-email"],
+      "methods": ["UpdateProducts()"]
+    },
+    {
+      "name": "Order",
+      "attributes": ["#orderid", "-date", "-customerName", "-customerId"],
+      "methods": ["PlaceOrder()"]
+    },
+    {
+      "name": "OrderDetails",
+      "attributes": [
+        "#odredId",
+        "-productId",
+        "-productName",
+        "-quantity",
+        "-unitCost",
+        "-total"
+      ],
+      "methods": ["CalculateTotal()"]
+    },
+    {
+      "name": "Product",
+      "attributes": ["+productId", "-name", "-category"],
+      "methods": [""]
+    },
+    {
+      "name": "Page",
+      "attributes": ["-name", "-categories"],
+      "methods": ["ResetPassword()", "Successfull()"]
+    }
+  ],
+  "relations": [
+    {
+      "type": "composition",
+      "from": "Page",
+      "where": "User"
+    },
+    {
+      "type": "association",
+      "from": "Administrator",
+      "where": "Product"
+    },
+    {
+      "type": "inheritance",
+      "from": "User",
+      "where": "Customer"
+    },
+    {
+      "type": "inheritance",
+      "from": "User",
+      "where": "Administrator"
+    },
+    {
+      "type": "composition",
+      "from": "Customer",
+      "where": "Order"
+    },
+    {
+      "type": "composition",
+      "from": "Order",
+      "where": "OrderDetails"
+    }
+  ]
+}

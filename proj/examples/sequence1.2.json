@@ -1,0 +1,42 @@
+{
+  "classes": ["Account", "ATM Transactions", "Robber", "Bank"],
+  "sequences": [
+    {
+      "activate": "Account",
+      "from": "Account",
+      "where": "ATM Transactions",
+      "type": "syn_request",
+      "name": "CreateTransaction()"
+    },
+    {
+      "activate": "ATM Transactions",
+      "from": "ATM Transactions",
+      "where": "Account",
+      "type": "response",
+      "name": "Failed()",
+      "deactivate": "ATM Transactions"
+    },
+    {
+      "activate": "Robber",
+      "from": "Robber",
+      "where": "Bank",
+      "type": "asyn_request",
+      "name": "Steal()",
+      "deactivate": "Robber"
+    },
+    {
+      "activate": "Bank",
+      "from": "Bank",
+      "where": "Account",
+      "type": "syn_request",
+      "name": "Manages()"
+    },
+    {
+      "from": "Account",
+      "where": "Bank",
+      "type": "response",
+      "name": "Withdraw()",
+      "deactivate": "Bank"
+    }
+  ]
+}

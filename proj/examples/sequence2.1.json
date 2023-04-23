@@ -1,0 +1,43 @@
+{
+  "classes": ["Customer", "Order", "User", "Page", "Administrator", "Product"],
+  "sequences": [
+    {
+      "activate": "Customer",
+      "from": "Customer",
+      "where": "Order",
+      "type": "syn_request",
+      "name": "Purchase()"
+    },
+    {
+      "activate": "Order",
+      "from": "Order",
+      "where": "Customer",
+      "type": "response",
+      "name": "PlaceOrder()",
+      "deactivate": "Order"
+    },
+    {
+      "activate": "Administrator",
+      "from": "Administrator",
+      "where": "Product",
+      "type": "asyn_request",
+      "name": "UpdateProducts()"
+    },
+    {
+      "activate": "User",
+      "from": "User",
+      "where": "Page",
+      "type": "syn_request",
+      "name": "Login()",
+      "deactivate": "Administrator"
+    },
+    {
+      "activate": "Page",
+      "from": "Page",
+      "where": "User",
+      "type": "response",
+      "name": "Successfull()",
+      "deactivate": "Page"
+    }
+  ]
+}

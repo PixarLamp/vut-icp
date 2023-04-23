@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>seq_edit_menu</class>
+ <widget class="QDialog" name="seq_edit_menu">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>402</width>
+    <height>363</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QPushButton" name="Submit">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>300</y>
+     <width>80</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Submit</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>330</y>
+     <width>371</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>20</y>
+     <width>160</width>
+     <height>261</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>Add Relation</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="from">
+      <property name="inputMask">
+       <string/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="where"/>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="type"/>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="method"/>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>Optional</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="activate"/>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="deactivate"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>150</y>
+     <width>160</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>Add Class</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="addName"/>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_6">
+      <property name="text">
+       <string>Remove Class</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="delName"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="deleteLast">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>90</y>
+     <width>158</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Delete last sequence</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>16</width>
+     <height>30</height>
+    </size>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

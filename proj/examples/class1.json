@@ -1,0 +1,92 @@
+{
+  "classes": [
+    {
+      "name": "Bank",
+      "attributes": ["+code", "+address"],
+      "methods": ["Manages()", "Maintains()", "Performed()"]
+    },
+    {
+      "name": "ATM",
+      "attributes": ["+location", "+managedby"],
+      "methods": ["Transaction()", "Identifies()", "ReleaseMoney()"]
+    },
+    {
+      "name": "Customer",
+      "attributes": ["+name", "+address", "+dob", "+cardNumber", "+pin"],
+      "methods": ["VerifyPassword()", "Withdraw()"]
+    },
+    {
+      "name": "Account",
+      "attributes": ["+number", "+balance"],
+      "methods": [
+        "Deposit()",
+        "Withdraw()",
+        "CreateTransaction()",
+        "Verified()"
+      ]
+    },
+    {
+      "name": "ATM Transactions",
+      "attributes": [
+        "+transactionId",
+        "+date",
+        "+type",
+        "+amount",
+        "+post balance"
+      ],
+      "methods": ["Modifies()"]
+    },
+    {
+      "name": "Current Account",
+      "attributes": ["+accountNo.", "+balane"],
+      "methods": ["Withdraw()"]
+    },
+    {
+      "name": "Saving Account",
+      "attributes": ["+accountNo.", "+balane"],
+      "methods": ["Something()"]
+    }
+  ],
+  "relations": [
+    {
+      "type": "aggregation",
+      "from": "Bank",
+      "where": "ATM"
+    },
+    {
+      "type": "aggregation",
+      "from": "Bank",
+      "where": "Account"
+    },
+    {
+      "type": "association",
+      "from": "Customer",
+      "where": "ATM"
+    },
+    {
+      "type": "association",
+      "from": "Customer",
+      "where": "Account"
+    },
+    {
+      "type": "association",
+      "from": "Account",
+      "where": "ATM Transactions"
+    },
+    {
+      "type": "inheritance",
+      "from": "Account",
+      "where": "Current Account"
+    },
+    {
+      "type": "inheritance",
+      "from": "Account",
+      "where": "Saving Account"
+    },
+    {
+      "type": "association",
+      "from": "Current Account",
+      "where": "Saving Account"
+    }
+  ]
+}

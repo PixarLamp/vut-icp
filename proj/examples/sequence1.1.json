@@ -1,0 +1,48 @@
+{
+  "classes": ["Customer", "Account", "ATM", "Bank"],
+  "sequences": [
+    {
+      "activate": "Customer",
+      "from": "Customer",
+      "where": "Account",
+      "type": "syn_request",
+      "name": "VerifyPassword()"
+    },
+    {
+      "activate": "Account",
+      "from": "Account",
+      "where": "Customer",
+      "type": "response",
+      "name": "Verified()",
+      "deactivate": "Account"
+    },
+    {
+      "from": "Customer",
+      "where": "ATM",
+      "type": "syn_request",
+      "name": "Withdraw()"
+    },
+    {
+      "activate": "ATM",
+      "from": "ATM",
+      "where": "Bank",
+      "type": "syn_request",
+      "name": "Transaction()"
+    },
+    {
+      "activate": "Bank",
+      "from": "Bank",
+      "where": "ATM",
+      "type": "response",
+      "name": "Performed()",
+      "deactivate": "Bank"
+    },
+    {
+      "from": "ATM",
+      "where": "Customer",
+      "type": "response",
+      "name": "ReleaseMoney()",
+      "deactivate": "ATM"
+    }
+  ]
+}
